@@ -86,7 +86,7 @@ module.exports = {
       .setTimestamp()
       var playingMessage = await queue.textChannel.send(embed);
       await playingMessage.react("⏭");
-      await playingMessage.react("⏯");
+      await playingMessage.react("⏸");
       await playingMessage.react("🔁");
       await playingMessage.react("⏹");
     } catch (error) {
@@ -112,7 +112,7 @@ module.exports = {
           collector.stop();
           break;
 
-        case "⏯":
+        case "⏸":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           if (queue.playing) {
